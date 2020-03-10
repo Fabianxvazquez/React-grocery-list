@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import List from './List';
-import TodoForm from './TodoForm'
+import TogetForm from './TogetForm'
 
 class App extends Component {
   state = {
@@ -32,7 +32,7 @@ class App extends Component {
     return(
       
       <div>
-        <TodoForm addItem={this.addItem} />
+        <TogetForm addItem={this.addItem} />
         <List name="Grocery List" items={togets}/>
       </div>
     )
