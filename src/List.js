@@ -1,10 +1,11 @@
 import React from 'react'
+import Toget from './Toget'
 
-const List = ({ items, name }) => (
+const List = ({ items, name, togetClick }) => (
   <div>
     <h2>{name}</h2>
     <ul>
-      { items.map( item => <li key={item.id}>{item.name}</li>) }
+    { items.map( item => <Toget key={item.id} {...item} togetClick={togetClick} /> )}
     </ul>
   </div>
  )

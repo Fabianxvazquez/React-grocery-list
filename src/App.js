@@ -24,7 +24,22 @@ class App extends Component {
     this.setState({togets: [toget,...togets]})
   }
 
-  
+  handleClick = (id) => {
+    const {togets} = this.state
+    this.setState({
+      togets: togets.map(toget=>{
+        if (toget.id === id){
+          return {
+            ...toget,
+            complete: !toget.complete
+          }
+        }
+        return toget
+      })
+    })
+  }
+
+
 
 
   render() {
@@ -33,7 +48,7 @@ class App extends Component {
       
       <div>
         <TogetForm addItem={this.addItem} />
-        <List name="Grocery List" items={togets}/>
+        <List name="Grocery List" items={togets} togetClick={this.handleClick}/>
       </div>
     )
   }
